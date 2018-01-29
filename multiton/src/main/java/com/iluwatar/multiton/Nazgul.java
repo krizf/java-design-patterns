@@ -22,42 +22,44 @@
  */
 package com.iluwatar.multiton;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 
  * Nazgul is a Multiton class. Nazgul instances can be queried using {@link #getInstance} method.
  *
  */
-public final class Nazgul {
-
-  private static Map<NazgulName, Nazgul> nazguls;
-
-  private NazgulName name;
-
+public enum Nazgul {
+  // List of Nazgul instances
+  KHAMUL("KHAMUL"),
+  MURAZOR("MURAZOR"),
+  DWAR("DWAR"),
+  JI_INDUR("JI_INDUR"),
+  AKHORAHIL("AKHORAHIL"),
+  HOARMURATH("HOARMURATH"),
+  ADUNAPHEL("ADUNAPHEL"),
+  REN("REN"),
+  UVATHA("UVATHA");
+  //
+  private String name;
+  private static final Map<String,Nazgul> names = new HashMap<>(Nazgul.values().length);
   static {
-    nazguls = new ConcurrentHashMap<>();
-    nazguls.put(NazgulName.KHAMUL, new Nazgul(NazgulName.KHAMUL));
-    nazguls.put(NazgulName.MURAZOR, new Nazgul(NazgulName.MURAZOR));
-    nazguls.put(NazgulName.DWAR, new Nazgul(NazgulName.DWAR));
-    nazguls.put(NazgulName.JI_INDUR, new Nazgul(NazgulName.JI_INDUR));
-    nazguls.put(NazgulName.AKHORAHIL, new Nazgul(NazgulName.AKHORAHIL));
-    nazguls.put(NazgulName.HOARMURATH, new Nazgul(NazgulName.HOARMURATH));
-    nazguls.put(NazgulName.ADUNAPHEL, new Nazgul(NazgulName.ADUNAPHEL));
-    nazguls.put(NazgulName.REN, new Nazgul(NazgulName.REN));
-    nazguls.put(NazgulName.UVATHA, new Nazgul(NazgulName.UVATHA));
+    for(Nazgul nazgul : Nazgul.values()) {
+      names.put(nazgul.getName(),nazgul);
+    }
   }
 
-  private Nazgul(NazgulName name) {
+  Nazgul(String name){
     this.name = name;
   }
 
-  public static Nazgul getInstance(NazgulName name) {
-    return nazguls.get(name);
-  }
-
-  public NazgulName getName() {
+  public String getName() {
     return name;
   }
+
+  public Nazgul summonNazgulByName(String name){
+    return names.get(name);
+  }
+
 }

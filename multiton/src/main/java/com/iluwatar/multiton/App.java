@@ -46,14 +46,14 @@ public class App {
    * @param args command line args
    */
   public static void main(String[] args) {
-    LOGGER.info("KHAMUL={}", Nazgul.getInstance(NazgulName.KHAMUL));
-    LOGGER.info("MURAZOR={}", Nazgul.getInstance(NazgulName.MURAZOR));
-    LOGGER.info("DWAR={}", Nazgul.getInstance(NazgulName.DWAR));
-    LOGGER.info("JI_INDUR={}", Nazgul.getInstance(NazgulName.JI_INDUR));
-    LOGGER.info("AKHORAHIL={}", Nazgul.getInstance(NazgulName.AKHORAHIL));
-    LOGGER.info("HOARMURATH={}", Nazgul.getInstance(NazgulName.HOARMURATH));
-    LOGGER.info("ADUNAPHEL={}", Nazgul.getInstance(NazgulName.ADUNAPHEL));
-    LOGGER.info("REN={}", Nazgul.getInstance(NazgulName.REN));
-    LOGGER.info("UVATHA={}", Nazgul.getInstance(NazgulName.UVATHA));
+    LOGGER.info("KHAMUL={}", Nazgul.KHAMUL);
+    LOGGER.info("MURAZOR={}", Nazgul.MURAZOR);
+    LOGGER.info("DWAR={}", Nazgul.DWAR);
+    LOGGER.info("JI_INDUR={}", Nazgul.JI_INDUR);
+    LOGGER.info("AKHORAHIL={}", Nazgul.AKHORAHIL);
+    LOGGER.info("HOARMURATH={}", Nazgul.HOARMURATH);
+    LOGGER.info("ADUNAPHEL={}", Nazgul.ADUNAPHEL);
+    LOGGER.info("REN={}", Nazgul.REN);
+    LOGGER.info("UVATHA={}", Nazgul.UVATHA);
   }
 }
